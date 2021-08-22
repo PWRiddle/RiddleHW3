@@ -16,9 +16,12 @@ var whatChars;
 
 // Prompt length of password (8 - 128 only)
 function passLengthCheck(){
-  var passLength = prompt("How long would you like your password to be? (please choose between 8-128 characters");
+  var passLength = prompt("How long would you like your password to be? (please choose an integer value for password length between 8-128 characters");
   //Add conditions checks in case user didn't listen
-  
+  if (Number.isInteger(Number(passLength)) === false){
+    alert("Please select an integer value between 8 - 128.")
+    generatePassword();
+  }
   if (passLength < 8){
     alert("You selected a number below 8, password must be between 8 and 128 characters");
     passLengthCheck();
