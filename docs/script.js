@@ -143,7 +143,7 @@ function generatePassword() {
       password = password + lowCase[getRandomInteger(0, lowCase.length -1)]
     }
   }else if(whatChars === [0, 1, 0, 0]){
-    for(var i = 0; i < passLength; i++){
+    for(var i = 0; i < password + passLength; i++){
       password = password + upCase[getRandomInteger(0, upCase.length -1)]
     }
   }else if(whatChars === [0, 0, 1, 0]){
@@ -157,26 +157,15 @@ function generatePassword() {
   }else{
     for(var i = 0; i < passLength; i++){
       numGen = getRandomInteger(1, 4)
-      if (numGen === 1){
-        if (whatChars[0] === 1){
+      if (numGen === 1 && whatChars[0] === 1 ){
           password = password + lowCase[getRandomInteger(0, lowCase.length -1)]
-        }
-      }else if (numGen === 2){
-        if (whatChars[1] === 1){
+      }else if (numGen === 2 && whatChars[1] === 1){
           password = password + upCase[getRandomInteger(0, upCase.length -1)]
-        }
-
-      }else if (numGen === 3){
-        if (whatChars[2] === 1){
+      }else if (numGen === 3 && whatChars[2] === 1){
           password = password + numbers[getRandomInteger(0, numbers.length -1)]
-        }
-      
-      }else if (numGen === 4){
-        if (whatChars[3] === 1){
+      }else if (numGen === 4 && whatChars[3] === 1){
           password = password + characters[getRandomInteger(0, characters.length -1)]
-        }
-
-      }else{
+        }else{
         if( whatChars[0] == 1){
           password = password + lowCase[getRandomInteger(0, lowCase.length -1)]
 
@@ -190,7 +179,7 @@ function generatePassword() {
       }
     }
   }
-  return password;
+return password;
 }
 
 
