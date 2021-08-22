@@ -15,3 +15,6 @@ Javascript should accept user input, attempt to randomize which character type t
 type fails it should still randomize the character of whatever type it hits first.
 
 
+Notes: I'm not sure why, but github pages will still accept decimal values as password lengths. This is appropriately handled from visual studio, I'm not sure what the issue is.
+
+
